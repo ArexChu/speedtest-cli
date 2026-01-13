@@ -52,6 +52,7 @@ func (s *Server) IsUp() bool {
 		return false
 	}
 	req.Header.Set("User-Agent", UserAgent)
+	req.Header.Set("Cookie", "ustc=1")
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
